@@ -1,5 +1,5 @@
 
-import React from "react";
+import React,{useState} from "react";
 
 // reactstrap components
 import {
@@ -17,7 +17,42 @@ import {
   Col,
 } from "reactstrap";
 
-const Register = () => {
+
+const Register = (props) => {
+
+  
+  const [email,setEmail]=useState('');
+  const [password,setPassword]=useState('');
+  const [name,setName]=useState('');
+
+  const handleEmailChange=(event)=>{
+    const email_value = event.target.value
+   
+    
+    setEmail(email_value)
+    }
+
+  const handleNameChange=(event)=>{
+      const name_value = event.target.value
+      setName(name_value)
+      }
+
+    const handlePasswordChange=(event)=>{
+
+    const password_value = event.target.value
+   
+    setPassword(password_value)
+    }
+
+
+    
+  
+    const SignUp=(name,email,password)=>{
+          
+              props.history.push('/auth/login')
+         
+    }
+
   return (
     <>
       <Col lg="6" md="8">
@@ -75,7 +110,12 @@ const Register = () => {
                       <i className="ni ni-hat-3" />
                     </InputGroupText>
                   </InputGroupAddon>
-                  <Input placeholder="Name" type="text" />
+                  <Input 
+                  placeholder="Name" 
+                  type="text"
+                  value={name}
+                  onChange={(event)=>handleNameChange(event)}
+                   />
                 </InputGroup>
               </FormGroup>
               <FormGroup>
@@ -89,6 +129,9 @@ const Register = () => {
                     placeholder="Email"
                     type="email"
                     autoComplete="new-email"
+                    value={email}
+                    onChange={(event)=>handleEmailChange(event)}
+                    
                   />
                 </InputGroup>
               </FormGroup>
@@ -103,6 +146,8 @@ const Register = () => {
                     placeholder="Password"
                     type="password"
                     autoComplete="new-password"
+                    value={password}
+                    onChange={(event)=>handlePasswordChange(event)}
                   />
                 </InputGroup>
               </FormGroup>
@@ -135,9 +180,11 @@ const Register = () => {
                 </Col>
               </Row>
               <div className="text-center">
-                <Button className="mt-4" color="primary" type="button">
+                
+                 <Button className="mt-4" color="primary" type="button" onClick={()=>SignUp(name,email,password)}>
                   Create account
-                </Button>
+                 </Button>
+                
               </div>
             </Form>
           </CardBody>

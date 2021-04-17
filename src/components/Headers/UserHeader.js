@@ -36,7 +36,7 @@ const UserHeader = () => {
         }}
       >
         {/* Mask */}
-        <span className="mask bg-gradient-default opacity-8" />
+        <span className="mask bg-gradient-success opacity-8" />
         {/* Header container */}
         <Container className="d-flex align-items-center" fluid>
           <Row>
@@ -47,7 +47,7 @@ const UserHeader = () => {
                 with your work and manage your projects or assigned tasks
               </p>
               <Button
-                color="info"
+                color="default"
                 href="#pablo"
                 onClick={(e) => e.preventDefault()}
               >

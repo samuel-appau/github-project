@@ -36,7 +36,7 @@ const AdminNavbar = () => {
       <Navbar className="navbar-top navbar-horizontal navbar-dark" expand="md">
         <Container className="px-4">
           <NavbarBrand to="/" tag={Link}>
-            <h2 className="nav-link-inner--text text-white">Borla_App Admin Panel</h2>
+            <h2 className="nav-link-inner--text text-white">Borla-App Admin Panel</h2>
           </NavbarBrand>
           <button className="navbar-toggler" id="navbar-collapse-main">
             <span className="navbar-toggler-icon" />

@@ -1,21 +1,6 @@
-/*!
 
-=========================================================
-* Argon Dashboard React - v1.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React from "react";
+import React,{useState} from "react";
+import { Link, Redirect } from "react-router-dom";
 
 // reactstrap components
 import {
@@ -34,7 +19,42 @@ import {
 } from "reactstrap";
 //  import axios from 'axios'
 
-const Login = () => {
+
+
+
+
+
+const Login = (props) => {
+
+  const [email,setEmail]=useState('');
+  const [password,setPassword]=useState('');
+
+
+  const handleEmailChange=(event)=>{
+    const email_value = event.target.value
+   
+    
+    setEmail(email_value)
+    }
+
+    const handlePasswordChange=(event)=>{
+
+    const password_value = event.target.value
+   
+    setPassword(password_value)
+    }
+
+
+    
+  
+    const SignIn=(email,password)=>{
+          
+              props.history.push('/admin/index')
+         
+    }
+
+
+
   return (
     <>
       <Col lg="5" md="7">
@@ -81,9 +101,13 @@ const Login = () => {
             </div>
           </CardHeader>
           <CardBody className="px-lg-5 py-lg-5">
-            <div className="text-center text-muted mb-4">
+             
+             
+
+             <div className="text-center text-muted mb-4">
               <small>Or sign in with credentials</small>
-            </div>
+             </div>
+
             <Form role="form">
               <FormGroup className="mb-3">
                 <InputGroup className="input-group-alternative">
@@ -96,6 +120,8 @@ const Login = () => {
                     placeholder="Email"
                     type="email"
                     autoComplete="new-email"
+                    value={email}
+                    onChange={(event)=>handleEmailChange(event)}
                   />
                 </InputGroup>
               </FormGroup>
@@ -110,6 +136,8 @@ const Login = () => {
                     placeholder="Password"
                     type="password"
                     autoComplete="new-password"
+                    value={password}
+                    onChange={(event)=>handlePasswordChange(event)}
                   />
                 </InputGroup>
               </FormGroup>
@@ -127,7 +155,7 @@ const Login = () => {
                 </label>
               </div>
               <div className="text-center">
-                <Button className="my-4" color="success" type="button">
+                <Button className="my-4" color="success" type="submit" onClick={()=>SignIn(email,password)}>
                   Sign in
                 </Button>
               </div>
@@ -145,13 +173,11 @@ const Login = () => {
             </a>
           </Col>
           <Col className="text-right" xs="6">
-            <a
-              className="text-light"
-              href="#pablo"
-              onClick={(e) => e.preventDefault()}
-            >
+            <Link
+               className='text-light'
+               to="/auth/register">
               <small>Create new account</small>
-            </a>
+            </Link>
           </Col>
         </Row>
       </Col>

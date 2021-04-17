@@ -35,7 +35,7 @@ const Login = () => {
                   href="https://www.creative-tim.com?ref=adr-auth-footer"
                   target="_blank"
                 >
-                  V-Mate Waste Management
+                  V-Met Waste Management
                 </a>
               </div>
             </Col>
