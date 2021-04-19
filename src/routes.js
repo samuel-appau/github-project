@@ -3,8 +3,8 @@ import Profile from "views/examples/Profile.js";
 import Maps from "views/examples/Maps.js";
 import Register from "views/examples/Register.js";
 import Login from "views/examples/Login.js";
-import Tables from "views/examples/Tables.js";
-import Icons from "views/examples/Icons.js";
+import Notification from "views/examples/Notification.js";
+import AddUser from "views/examples/AddUser.js";
 
 var Adminroutes = [
   {
@@ -18,7 +18,7 @@ var Adminroutes = [
     path: "/user",
     name: "Add New User",
     icon: "ni ni-single-02 text-yellow",
-    component: Icons,
+    component: AddUser,
     layout: "/admin",
   },
  
@@ -33,7 +33,7 @@ var Adminroutes = [
     path: "/notification",
     name: "Notifications",
     icon: "ni ni-bell-55 text-red",
-    component: Tables,
+    component: Notification,
     layout: "/admin",
   },
   {

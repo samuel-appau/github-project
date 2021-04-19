@@ -167,44 +167,31 @@ const Index = (props) => {
                     <th scope="row">Ernest kwami Aryee</th>
                     <td>569</td>
                     <td>Paid</td>
-                    <td>
-                      <i className="fas fa-arrow-up text-success mr-3" /> 1.00
-                    </td>
+                    <td>1.00</td>
                   </tr>
                   <tr>
                     <th scope="row">kwami Aryee</th>
                     <td>85</td>
                     <td>Pending</td>
-                    <td>
-                      <i className="fas fa-arrow-down text-warning mr-3" />{" "}
-                       0.00
-                    </td>
+                    <td>0.00</td>
                   </tr>
                   <tr>
                     <th scope="row">Isaac Nkrumah</th>
                     <td>3,513</td>
                     <td>Paid</td>
-                    <td>
-                      <i className="fas fa-arrow-down text-warning mr-3" />{" "}
-                       20
-                    </td>
+                    <td>20</td>
                   </tr>
                   <tr>
                     <th scope="row">Ernest kwami Aryee</th>
                     <td>50</td>
                     <td>Paid</td>
-                    <td>
-                      <i className="fas fa-arrow-up text-success mr-3" /> 0.00
-                    </td>
+                    <td>0.00</td>
                   </tr>
                   <tr>
                     <th scope="row">Ernest kwami Aryee</th>
                     <td>95</td>
                     <td>Pending</td>
-                    <td>
-                      <i className="fas fa-arrow-down text-danger mr-3" />{" "}
-                       100
-                    </td>
+                    <td>100</td>
                   </tr>
                   <tr>
                     

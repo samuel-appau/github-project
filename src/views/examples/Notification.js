@@ -25,7 +25,7 @@ import {
 // core components
 import Header from "components/Headers/Header.js";
 
-const Tables = () => {
+const Notification = () => {
   return (
     <>
       <Header />
@@ -322,4 +322,4 @@ const Tables = () => {
   );
 };
 
-export default Tables;
+export default Notification;
