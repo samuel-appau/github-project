@@ -1,7 +1,7 @@
 {
-  "name": "Borla_App_Admin",
+  "name": "projectinterview",
   "version": "1.2.0",
-  "description": "Admin Panel for Borla App",
+  "description": "proj_interview",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -17,13 +17,11 @@
     "argon-dashboard",
     "argon-dashboard-react"
   ],
-   "scripts": {
+  "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  
-  
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,6 +34,7 @@
   ],
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.2",
+    "axios": "^0.21.1",
     "bootstrap": "4.6.0",
     "chart.js": "2.9.4",
     "classnames": "2.2.6",
