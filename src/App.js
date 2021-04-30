@@ -69,7 +69,8 @@ function App() {
               <Col lg="4" md="2">
                 <h1 className="text-white">Welcome!</h1>
                 <p className="text-lead text-white">
-                  A simple application that enables you to find all your github repositories
+                  A simple application that enables you to find all your github
+                  repositories
                 </p>
               </Col>
             </Row>
@@ -109,6 +110,104 @@ function App() {
                 </Form>
               </Col>
             </Row>
+            <Row className="row mb-4">
+              <Col className="order-xl-2 mb-5 mb-xl-0" xl="3">
+                <Card className="card-profile shadow">
+                  <Row className="justify-content-center">
+                    <Col className="order-lg-2" lg="2.5">
+                      <div className="card-profile-image">
+                        {isloaded === false ? (
+                          <div>Loading....</div>
+                        ) : (
+                          <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                            <img
+                              alt="..."
+                              className="rounded-circle"
+                              src={userinfo.avatar_url}
+                            />
+                          </a>
+                        )}
+                      </div>
+                    </Col>
+                  </Row>
+                  <CardHeader className="text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4 ">
+                    <div className="d-flex justify-content-between">
+                      <Button
+                        className="mr-4"
+                        color="info"
+                        href={userinfo.url}
+                        onClick={(e) => e.preventDefault()}
+                        size="sm"
+                      >
+                        Connect
+                      </Button>
+                      <Button
+                        className="float-right"
+                        color="default"
+                        href={userinfo.blog}
+                        onClick={(e) => e.preventDefault()}
+                        size="sm"
+                      >
+                        Message
+                      </Button>
+                    </div>
+                  </CardHeader>
+                  <CardBody className="pt-0 pt-md-4">
+                    <Row>
+                      <div className="col">
+                        <div className="card-profile-stats d-flex justify-content-center mt-md-5">
+                          <div>
+                            <span>
+                              <h2>Location</h2>
+                            </span>
+                            {isloaded === false ? (
+                              <span className="description">Loading....</span>
+                            ) : (
+                              <span className="description">
+                                {userinfo.location}
+                              </span>
+                            )}
+                          </div>
+                          <div>
+                            <span>
+                              <h2>Full Name</h2>
+                            </span>
+                            {isloaded === false ? (
+                              <span className="description">Loading....</span>
+                            ) : (
+                              <span className="description">
+                                {userinfo.name}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </Row>
+                  </CardBody>
+                </Card>
+              </Col>
+
+              <Col>
+                <h1 className="heading text-white mb-4">DESCRIPTION</h1>
+                <div className="pl-lg-4">
+                  <FormGroup>
+                    <hr color="white" />
+                    <Input
+                      className="form-control-alternative"
+                      placeholder="A few words about you ..."
+                      rows="8"
+                      defaultValue={
+                        userinfo.bio == null
+                          ? "No biography found"
+                          : userinfo.bio
+                      }
+                      type="textarea"
+                    />
+                  </FormGroup>
+                </div>
+              </Col>
+            </Row>
+
             <Row>
               <Col lg="6" xl="3">
                 <Card className="card-stats mb-4 mb-xl-0">
@@ -245,7 +344,7 @@ function App() {
           </div>
         </Container>
       </div>
-      <div className="mt--7" >
+      <div className="mt--7">
         {isloaded === true ? (
           <Container className="mt--7" fluid>
             <Row className="mt-5">
@@ -283,7 +382,9 @@ function App() {
                     <tbody>
                       {repos.map((repo) => (
                         <tr key={repo.id}>
-                          <th scope="row">{repo.name}</th>
+                          <a href={repo.owner.html_url}>
+                            <th scope="row">{repo.name}</th>
+                          </a>
                           <td>{repo.created_at}</td>
                           <td>{repo.updated_at}</td>
                           <td>{repo.language}</td>
