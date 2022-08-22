@@ -17,7 +17,7 @@ import {
   Spinner,
 } from "reactstrap";
 import axios from "axios";
-import { useState } from "react";
+import React,{ useState } from "react";
 
 function App() {
   // state variables
